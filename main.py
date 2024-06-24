@@ -12,7 +12,8 @@ def find_sim(x):
     cos_sim = dot(x, em2)/(norm(x)*norm(em2))
     return cos_sim
 
-em2 = embeddings("How much money i have spent on food and travel  ")
+user_query = "How much money i have spent on online shopping"
+em2 = embeddings(user_query)
 df = pd.read_csv('data/data_embed.csv')
 df.fillna(0,inplace=True)
 df['embeddings'] = df['embeddings'].apply(fun)
